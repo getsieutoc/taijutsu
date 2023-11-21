@@ -20,7 +20,7 @@ This template includes the following:
 
 ## Demo
 
-https://taijutsu.vercel.app
+https://taijutsu.sieutoc.website
 
 ## Getting Started
 
@@ -56,7 +56,7 @@ pnpm install
 
 For the first time, you need some default environment variables:
 
-```bash:w
+```bash
 
 cp .env.example .env
 ```
@@ -66,6 +66,36 @@ Then, run the development server:
 ```bash
 pnpm dev
 ```
+
+Then, run the development server:
+
+```bash
+pnpm dev
+```
+
+#### Setup Prisma
+
+NOTE: The dev server need to be running, because we need Postgres instance.
+
+Sometimes, for example in fresh database situation when you have just started:
+
+```bash
+pnpm prisma migrate dev
+```
+
+#### Create New Component
+
+We use [ shadcn-ui ](https://ui.shadcn.com/) in this stack, and create 2 helper scripts for you:
+
+```bash
+# for adding new component
+pnpm ui:add <compnent-name>
+
+# for checking diffs
+pnpm ui:diff
+```
+
+#### Start developing!
 
 Open [http://localhost:3000](http://localhost:3000) with your browser and start developing.
 
