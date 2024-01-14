@@ -40,7 +40,7 @@ You can either use this template by:
 - Or using the script below:
 
 ```bash
-npx tiged websitesieutoc/taijutsu your-project
+pnpm dlx tiged websitesieutoc/taijutsu your-project
 ```
 
 Then, search and replace `taijutsu` with your project slug.
