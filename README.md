@@ -109,5 +109,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser and start 
 
 - This project uses `App Router` feature.
 - We try to take adventage of Next.js's ecosystem, thus most of the features here are built on top of Next.js best practices.
-- We use Chakra UI as our primary library. For ready-made themes, please find it at our [themes](https://github.com/websitesieutoc/themes) repo.
 - In the future we will launch a tool for customising your own themes soon!
