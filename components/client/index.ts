@@ -1,4 +1,4 @@
 'use client';
 
-export * from './providers';
+export * from './color-mode-switcher';
 export * from './header';

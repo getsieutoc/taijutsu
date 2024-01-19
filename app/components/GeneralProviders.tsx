@@ -1,9 +1,9 @@
-import { SessionProvider } from 'next-auth/react';
 import { Provider as JotaiProvider } from 'jotai';
-import { SWRConfig } from 'swr';
+import { SessionProvider } from 'next-auth/react';
 import { configs } from '@/lib/swr';
+import { SWRConfig } from 'swr';
 
-export function Providers({ children }: { children: React.ReactNode }) {
+export function GeneralProviders({ children }: { children: React.ReactNode }) {
   return (
     <SWRConfig value={configs}>
       <SessionProvider>
