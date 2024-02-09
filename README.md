@@ -6,7 +6,9 @@
     <img src="https://i.imgflip.com/8cdo87.jpg" />
 </p>
 
-The stack that use Tailwind CSS.
+<p align="center" width="100%">
+    The stack that use Tailwind CSS.
+</p>
 
 ## Features
 
