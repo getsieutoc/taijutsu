@@ -1,7 +1,8 @@
+import { getServerSession, NextAuthOptions } from 'next-auth';
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
 import EmailProvider from 'next-auth/providers/email';
-import { NextAuthOptions } from 'next-auth';
 import { prisma } from '@/lib/prisma';
+import { Role } from '@/types';
 
 export const authOptions: NextAuthOptions = {
   secret: process.env.NEXTAUTH_SECRET,
@@ -22,3 +23,14 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
 };
+
+export async function getSession() {
+  const session = await getServerSession(authOptions);
+
+  const isAdmin = session?.user?.role === Role.ADMIN;
+
+  return {
+    session,
+    isAdmin,
+  };
+}

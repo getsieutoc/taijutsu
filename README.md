@@ -98,7 +98,7 @@ We use [ shadcn-ui ](https://ui.shadcn.com/) in this stack, and create 2 helper 
 pnpm ui:add <compnent-name>
 
 # for checking diffs
-pnpm ui:diff
+pnpm ui:diff <component-name>
 ```
 
 #### Start developing!

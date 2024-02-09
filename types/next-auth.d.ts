@@ -7,12 +7,8 @@ declare module 'next-auth/adapters' {
   interface AdapterUser extends PrismaUser {}
 }
 
-// declare module 'next-auth/core/types' {
-//   interface Session {}
-// }
-
-// declare module 'next-auth/jwt' {
-//   interface JWT {
-//     account?: Account;
-//   }
-// }
+declare module 'next-auth' {
+  interface Session {
+    user: DefaultSession['user'] & Pick<PrismaUser, 'id' | 'username' | 'role'>;
+  }
+}

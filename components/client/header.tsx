@@ -1,5 +1,14 @@
 import Image from 'next/image';
 import { useAuth } from '@/hooks';
+import {
+  Button,
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from '@/components/ui';
 
 export const HeaderDemo = () => {
   const { session } = useAuth();
@@ -11,6 +20,22 @@ export const HeaderDemo = () => {
         <code className="font-mono font-bold">app/page.tsx</code>
         {session && session.user ? `, ${session.user.email}` : ''}
       </p>
+
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button>Open</Button>
+        </DialogTrigger>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Are you absolutely sure?</DialogTitle>
+            <DialogDescription>
+              This action cannot be undone. This will permanently delete your
+              account and remove your data from our servers.
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
+
       <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
         <a
           className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"

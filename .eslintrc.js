@@ -9,8 +9,9 @@ module.exports = {
     'prettier',
   ],
   rules: {
-    'react/display-name': 'off',
+    'import/no-cycle': 'error',
     'no-unused-vars': 'off',
+    'react/display-name': 'off',
     '@typescript-eslint/no-unused-vars': [
       'warn',
       {
