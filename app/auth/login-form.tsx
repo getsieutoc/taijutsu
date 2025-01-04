@@ -55,7 +55,7 @@ export const LoginForm = () => {
       signIn('credentials', {
         email: inputs.email,
         password: inputs.password,
-        callbackUrl: callbackUrl ?? '/dashboard',
+        callbackUrl: callbackUrl ?? '/',
       });
       toast.success('Logged In Successfully!');
     });

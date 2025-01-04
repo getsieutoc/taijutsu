@@ -37,13 +37,13 @@ export const AuthView = () => {
           >
             <path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3" />
           </svg>
-          Homie
+          Taijutsu
         </div>
         <div className="relative z-20 mt-auto">
           <blockquote className="space-y-2">
             <p className="text-2xl font-thin">
-              &ldquo;This Homie has saved me countless hours of work and helped
-              me keep my business running smoothly.&rdquo;
+              &ldquo;This template has saved me countless hours of work and
+              helped me keep my business running smoothly.&rdquo;
             </p>
             <footer className="text-sm">– Vin Diesel</footer>
           </blockquote>

@@ -1,3 +1,5 @@
+export * from '@prisma/client';
+
 export enum HttpMethod {
   CONNECT = 'CONNECT',
   DELETE = 'DELETE',

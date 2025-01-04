@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import { useAuth } from '@/hooks';
+'use client';
+
 import {
   Button,
   Dialog,
@@ -9,30 +9,46 @@ import {
   DialogTitle,
   DialogDescription,
 } from '@/components/ui';
+import { useAuth, useRouter } from '@/hooks';
+import { signOut } from 'next-auth/react';
+import Image from 'next/image';
 
 export const HeaderDemo = () => {
-  const { session } = useAuth();
+  const router = useRouter();
+  const { user } = useAuth();
+
+  const handleAction = async () => {
+    if (user) {
+      await signOut({ callbackUrl: '/' });
+    } else {
+      router.push('/auth');
+    }
+  };
 
   return (
     <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
       <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-        Get started by editing&nbsp;
-        <code className="font-mono font-bold">app/page.tsx</code>
-        {session && session.user ? `, ${session.user.email}` : ''}
+        {user
+          ? `Welcome, ${user.email}`
+          : 'Get started by editing app/page.tsx'}
       </p>
 
       <Dialog>
         <DialogTrigger asChild>
-          <Button>Open</Button>
+          <Button variant="outline">{user ? 'Sign Out' : 'Login'}</Button>
         </DialogTrigger>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Are you absolutely sure?</DialogTitle>
+            <DialogTitle>Are you sure?</DialogTitle>
             <DialogDescription>
-              This action cannot be undone. This will permanently delete your
-              account and remove your data from our servers.
+              {user ? 'Are you sure you want to sign out?' : 'Go to /auth'}
             </DialogDescription>
           </DialogHeader>
+          <div className="flex justify-end gap-2">
+            <Button onClick={handleAction}>
+              {user ? 'Sign Out' : 'Go to auth page'}
+            </Button>
+          </div>
         </DialogContent>
       </Dialog>
 
