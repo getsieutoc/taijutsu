@@ -7,7 +7,6 @@ export const useAuth = (options?: UseAuthOptions) => {
 
   const isAuthenticated = !!session && status === 'authenticated';
 
-
   return {
     ...rest,
     session,
